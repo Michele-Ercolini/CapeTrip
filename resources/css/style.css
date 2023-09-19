@@ -1,3 +1,6 @@
-*{
-    background-color: yellow;
+root{
+    --w: #f7f7f7;
+    --p: #fde4d4;
+    --br: #302a29;
+    --bl: #1d1d1d;
 }

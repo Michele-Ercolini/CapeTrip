@@ -12,6 +12,8 @@
     
     <x-navbar/>
 
+    <x-header/>
+
     {{$slot}}
 
     @vite('resources/js/app.js')

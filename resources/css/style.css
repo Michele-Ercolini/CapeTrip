@@ -1,6 +1,97 @@
 root{
     --w: #f7f7f7;
-    --p: #fde4d4;
-    --br: #302a29;
-    --bl: #1d1d1d;
+    --pi: #f8efea;
+    --pu: #c300ff;
+    --v: #8100ff;
+}
+
+body{
+    background-color: var(--w);
+}
+
+/* Navbar */
+
+.navbar-custom{
+    background-color: #f8efea;
+    box-shadow: 0 1px rgba(129, 0, 255, 0.3);
+}
+
+.logo{
+    /* height: 5vh; */
+    width: 18vw;
+}
+
+.m-profile{
+    width: 24vw;
+    margin-right: 1%;
+    display: flex;
+    justify-content: end;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link:after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #c300ff;
+    transition: all 0.3s;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after{
+    opacity: 1;
+    background-color: #8100ff;
+    transition: 0.8s;
+}
+
+.m-profile .nav-link:after{
+    height: 0;
+}
+
+
+@media screen and (max-width:991px){
+    .logo{
+        width: 168px;
+    }
+    .m-profile{
+        margin: 0;
+        display: block;
+    }
+    .nav-link:after{
+    content: '';
+    height: 2px;
+    width: 10%;
+    background-color: #c300ff;
+    transition: all 0.3s;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    }
+}
+
+/* Header */
+
+.with-gradient {
+    position: relative;
+}
+
+.with-gradient:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.8));
+}
+
+.with-gradient:hover{
+    background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.8));
 }

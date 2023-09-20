@@ -1,17 +1,71 @@
-<header class="container my-3">
+<header class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
-            <div class="swiper mySwiper6">
+            <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide with-gradient"><img src="./media/paris-6510643_1280.jpg" alt=""></div>
-                    <div class="swiper-slide with-gradient">Slide 2</div>
-                    <div class="swiper-slide with-gradient">Slide 3</div>
-                    <div class="swiper-slide with-gradient">Slide 4</div>
-                    <div class="swiper-slide with-gradient">Slide 5</div>
-                    <div class="swiper-slide with-gradient">Slide 6</div>
-                    <div class="swiper-slide with-gradient">Slide 7</div>
-                    <div class="swiper-slide with-gradient">Slide 8</div>
-                    <div class="swiper-slide with-gradient">Slide 9</div>
+                    <div class="swiper-slide">
+                        <div class="card card1">
+                            <div class="card-content">
+                                <h3 class="card-title">Title</h3>
+                                <h5>Category</h5>
+                                <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero vitae veniam placeat nam, voluptas, accusamus ab aliquam libero reiciendis quod enim facilis ea, perspiciatis sapiente deleniti eum dolor quam.</p>
+                                <div class="d-flex justify-content-end">
+                                    <a class="button" href="">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card card2">
+                            <div class="card-content">
+                                <h3 class="card-title">Title</h3>
+                                <h5>Category</h5>
+                                <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero vitae veniam placeat nam, voluptas, accusamus ab aliquam libero reiciendis quod enim facilis ea, perspiciatis sapiente deleniti eum dolor quam.</p>
+                                <div class="d-flex justify-content-end">
+                                    <a class="button" href="">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card card3">
+                            <div class="card-content">
+                                <h3 class="card-title">Title</h3>
+                                <h5>Category</h5>
+                                <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero vitae veniam placeat nam, voluptas, accusamus ab aliquam libero reiciendis quod enim facilis ea, perspiciatis sapiente deleniti eum dolor quam.</p>
+                                <div class="d-flex justify-content-end">
+                                    <a class="button" href="">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card card4">
+                            <div class="card-content">
+                                <h3 class="card-title">Title</h3>
+                                <h5>Category</h5>
+                                <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vero vitae veniam placeat nam, voluptas, accusamus ab aliquam libero reiciendis quod enim facilis ea, perspiciatis sapiente deleniti eum dolor quam.</p>
+                                <div class="d-flex justify-content-end">
+                                    <a class="button" href="">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="swiper-slide">
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        
+                    </div> --}}
                 </div>
             </div>
         </div>

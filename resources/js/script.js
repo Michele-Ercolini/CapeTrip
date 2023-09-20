@@ -1,12 +1,22 @@
 /* Swiper Header*/
 
-let swiper = new Swiper(".mySwiper6", {
+let swiper = new Swiper(".mySwiper", {
     grabCursor: true,
     effect: "creative",
+    loop: true,
+    speed: 300,
+    mousewheel:{
+        invert: false,
+    },
     /* autoplay: {
         delay: 5000,
         disableOnInteraction: false,
     }, */
+    pagination:{
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
     creativeEffect: {
         prev: {
             shadow: true,

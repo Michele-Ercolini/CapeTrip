@@ -44,6 +44,11 @@ body{
     left: 0;
 }
 
+.nav-link:hover{
+    transform: scale(1.1);
+    transition: transform 100ms linear;
+}
+
 .nav-link:hover::after{
     opacity: 1;
     background-color: #8100ff;
@@ -80,10 +85,37 @@ body{
 
 header{
     background-color: #f7f7f7;
+    position: relative;
+    overflow: hidden;
 }
-.swiper {
-    width: 100%;
+
+.imgHeader{
     height: 89vh;
+    width: 100%; 
+}
+
+.imgHeader::before{
+    content: '';
+    position: absolute;
+    height: 89vh;
+    width: 30%;
+    top: 0;
+    left: 0;
+    background-image: var(--beforeImg,url(/public/media/eiffel.png));
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* transform: translateX(-50%);
+    transition: translateX 500ms; */
+    z-index: 2;
+}
+
+
+
+.swiper {
+    width: 80%;
+    height: 89vh;
+    position: relative;
 }
 
 .swiper-slide {
@@ -94,6 +126,37 @@ header{
     font-family: sans-serif;
 }
 
+
+.swiper-button-prev, .swiper-button-next{
+    position: absolute;
+    top: var(--swiper-navigation-top-offset,90%);
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    /* height: 75vh; */
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8100ff;
+}
+
+.swiper-button-prev{
+    left: 40%;
+}
+
+.swiper-button-next{
+    right: 40%;
+}
+
+.swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,20px));
+    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,20px));
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius,50%);
+    background: var(--swiper-pagination-bullet-inactive-color,#8100ff);
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .4);
+}
 
 .card{
     position: relative;
@@ -114,36 +177,76 @@ header{
 }
 
 .card2{
-    background-image: url();
+    background-image: url(/public/media/new-york.jpg);
 }
 
 .card3{
-    background-image: url();
+    background-image: url(/public/media/london-709283_1280.jpg);
 }
 
 .card4{
     background-image: url();
 }
 
-.card:hover{
-    transform: scale(1.1);
-
-}
-
 .card-content{
     --padding: 1.5rem;
     --padding-left: 5rem;
     position: absolute;
-    bottom: 0;
+    bottom: -12px;
     padding: var(--padding) var(--padding-left);
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)20%, rgba(0, 0, 0, 1));
-    transform: translateY(95%);
+    transform: translateY(65%);
     transition: transform 500ms ease;
+    transition-delay: 500ms;
 }
 
-.card:hover .card-content{
-    transform: translateY(0%);
+@media (hover){
+    .card:hover,
+    .card:focus-within{
+        transform: scale(1.1);
+    
+    }
+    .card-content{
+        transform: translateY(65%);
+        transition: transform 500ms ease;
+    }
+    .card:hover .card-content,
+    .card:focus-within .card-content{
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+    
+    .card:focus-within .card-content{
+        transition-duration: 0ms;
+    }
+    
+    .card-content > *:not(.card-title){
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+    
+    .card:hover .card-content > *:not(.card-title),
+    .card:focus-within .card-content > *:not(.card-title){
+        opacity: 1;
+        transition-delay: 1000ms;
+    }
+    .card-title::after{
+        transform: scaleX(0);
+    }
+}
 
+@media (max-width:1281px){
+    .card-content{
+        bottom: 165px;
+        padding: var(--padding) var(--padding);
+    }
+}
+
+@media (max-width:415px){
+    .card-content{
+        bottom: 213px;
+        padding: var(--padding) var(--padding);
+    }
 }
 
 .card-title{
@@ -159,12 +262,13 @@ header{
     bottom: -2px;
     width: calc(100% + var(--padding-left));
     background: #8100ff;
-    transform: scaleX(0);
+    /* transform: scaleX(0); */
     transform-origin: left;
     transition: transform 500ms ease;
 }
 
-.card:hover .card-title::after{
+.card:hover .card-title::after,
+.card:focus-within .card-title::after{
     transform: scaleX(1);
 }
 
@@ -176,14 +280,29 @@ header{
     background-color: #f8efea;
     padding: .5em 1.25em;
     border-radius: .25em;
+    transition: 0.2s;
 }
 
 .button:hover,
 .button:focus {
-    background-color: #c300ff;
+    background-color: #8100ff;
+    color: #f8efea
 }
 
 .card-body{
     padding: 0;
     color: rgba(255, 255, 255, 0.8);
 }
+
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0 !important;
+    }
+}
+

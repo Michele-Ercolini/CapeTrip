@@ -11,17 +11,16 @@
 
     <title>CapeTrip</title>
 
+    @livewireStyles
     @vite('resources/css/app.css')
 </head>
 <body>
     
     <x-navbar/>
 
-    <x-header/>
-
     {{$slot}}
 
-
+    @livewireScripts
     @vite('resources/js/app.js')
     {{-- FontAwesome --}}
     <script src="https://kit.fontawesome.com/0f3153532c.js" crossorigin="anonymous"></script>

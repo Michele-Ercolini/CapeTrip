@@ -28,7 +28,7 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         @auth
-                            <h6 class="nav-item">Ciao, {{Auth::user()->name}}</h6>
+                            <h6 class="nav-item d-inline">Ciao, {{Auth::user()->name}}</h6>
                             <a class="nav-link d-inline" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-regular fa-user fa-2xl" style="color: #8100ff;"></i>
                             </a>
@@ -36,16 +36,19 @@
                                 <li><a class="dropdown-item" href="#">Profilo</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a href="" class="dropdown-item" onclick="event.preventDefault();document.querySelector('#form-logout').submit();">Logout</a></li>
                             </ul>
+                            <form id="form-logout" action="{{route('logout')}}" method="POST">
+                                @csrf
+                            </form>
                         @else
                             <h6 class="nav-item d-inline">Ciao, User</h6>
                             <a class="nav-link d-inline" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-regular fa-user fa-2xl" style="color: #8100ff;"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#">Accedi</a></li>
-                                <li><a class="dropdown-item" href="#">Registrati</a></li>
+                                <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+                                <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
